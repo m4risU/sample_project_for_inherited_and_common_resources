@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.description %></td>
+    <td><%= book.price %></td>
+    <td><%= book.amount %></td>
+    <td><%= link_to 'Show', [:user,book] %></td>
+    <td><%= link_to 'Edit', [:edit, :user, book] %></td>
+    <td><%= link_to 'Destroy', [:user, book], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', [:new, :user, :book] %>

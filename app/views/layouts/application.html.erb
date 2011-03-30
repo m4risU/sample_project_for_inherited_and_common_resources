@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SampleProjectForInheritedAndCommonResources</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<h1> My Bookstore </h1>
+<div id="menu">
+  <%= link_to "Namespaced Books", user_books_path %>
+  <%= link_to "Stores", stores_path %>
+  <% if @store.present? && @store.persisted? %>
+     <%= link_to "Books", store_books_path(@store) %>
+  <% end %>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

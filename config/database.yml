@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: ir_development
+  username: postgres
+  password: secret
+  host: localhost
